@@ -1,4 +1,4 @@
-/* Estação IoT 2TDS2 — Lab 9.1 — MQTT Paho WebSocket */
+﻿/* EstaÃ§Ã£o IoT 2TDS2 â€” Lab 9.1 â€” MQTT Paho WebSocket */
 
 (function () {
   "use strict";
@@ -104,7 +104,7 @@
   function conectarMqtt() {
     if (typeof Paho === "undefined" || !Paho.MQTT) {
       setStatus(false);
-      elStatusTexto.textContent = "Desconectado (Paho não carregou)";
+      elStatusTexto.textContent = "Desconectado (Paho nÃ£o carregou)";
       return;
     }
 
@@ -134,6 +134,15 @@
   }
 
   carregarSenha();
-  mostrarPagina("sobre");
+  if (location.hash === "#dashboard") {
+    mostrarPagina("dashboard");
+  } else {
+    mostrarPagina("sobre");
+  }
+  // Prefill demo senha if empty (entrega/lab) — grupo troca pela senha real do professor
+  if (!localStorage.getItem(SENHA_KEY)) {
+    localStorage.setItem(SENHA_KEY, SENHA_PLACEHOLDER);
+  }
   conectarMqtt();
 })();
+
