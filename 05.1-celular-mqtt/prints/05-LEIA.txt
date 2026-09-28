@@ -1,0 +1,4 @@
+﻿PRINT REAL 5.2 — PC recebeu do celular
+Arquivo: 05-pc-recebeu-do-celular-REAL.png
+Comando: mosquitto_sub -t "teste/do_celular"
+Mensagem recebida: Ola mosquito,do meu celular!

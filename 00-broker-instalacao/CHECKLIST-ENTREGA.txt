@@ -1,0 +1,10 @@
+CHECKLIST — entrega atividade Mosquitto
+======================================
+[OK] 1. O que e o Mosquitto
+[OK] 2. Pre-requisitos
+[OK] 3. Instalacao / servico Running (prints)
+[OK] 4. listener 1883 + allow_anonymous true (prints)
+[OK] 5. Teste pub/sub PASS (prints)
+[OK] 6. IPv4 192.168.15.10 (prints)
+
+Arquivo principal para entregar: RELATORIO-ENTREGA-COMPLETO.pdf

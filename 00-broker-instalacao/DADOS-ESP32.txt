@@ -1,0 +1,11 @@
+Broker MQTT (Mosquitto) — dados para ESP32 e app
+================================================
+Host / IP: 192.168.15.10
+Porta: 1883
+Usuario: (nenhum — allow_anonymous true)
+Senha: (nenhuma)
+Topico de teste: teste/mensagem
+
+Codigo sugerido:
+const char* mqtt_broker = "192.168.15.10";
+const int mqtt_port = 1883;

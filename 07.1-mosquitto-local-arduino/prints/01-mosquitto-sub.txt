@@ -1,0 +1,12 @@
+aulas/professor/temperatura 25.0
+aulas/professor/umidade 48.7
+aulas/professor/qualidade_ar 1775
+aulas/professor/temperatura 20.9
+aulas/professor/umidade 52.8
+aulas/professor/qualidade_ar 2146
+aulas/professor/temperatura 25.1
+aulas/professor/umidade 58.0
+aulas/professor/qualidade_ar 1877
+aulas/professor/temperatura 29.0
+aulas/professor/umidade 58.8
+aulas/professor/qualidade_ar 2020

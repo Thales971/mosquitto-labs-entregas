@@ -1,0 +1,24 @@
+﻿============================================================
+ipconfig - IPv4 do Mosquitto / notebook
+============================================================
+
+Configuração de IP do Windows
+
+
+Adaptador de Rede sem Fio Wi-Fi 3:
+
+   Sufixo DNS específico de conexão. . . . . . : 
+   Endereço IPv6 . . . . . . . . . . : 2804:7f0:20:55cd:678f:4d88:6701:a332
+   Endereço IPv6 Temporário. . . . . . . . : 2804:7f0:20:55cd:a4e6:8922:3227:de79
+   Endereço IPv6 de link local . . . . . . . . : fe80::7a6f:5dbe:8e9:6716%18
+   Endereço IPv4. . . . . . . .  . . . . . . . : 192.168.15.5
+   Máscara de Sub-rede . . . . . . . . . . . . : 255.255.255.0
+   Gateway Padrão. . . . . . . . . . . . . . . : fe80::7ae9:cfff:fe08:60d0%18
+                                                 192.168.15.1
+
+Adaptador Ethernet Ethernet 7:
+
+   Estado da mídia. . . . . . . . . . . . . .  : mídia desconectada
+   Sufixo DNS específico de conexão. . . . . . : 
+
+MQTT_SERVER no sketch = 192.168.15.5

@@ -1,0 +1,24 @@
+﻿=== Servidor Mosquitto (evidencia 5.1/5.2) ===
+IP broker: 192.168.15.10
+Porta: 1883
+allow_anonymous: true
+
+
+
+Name      : mosquitto
+Status    : Running
+StartType : Automatic
+
+
+
+
+
+netstat :1883
+  TCP    0.0.0.0:1883           0.0.0.0:0              LISTENING       24368   TCP    127.0.0.1:1883         127.0.0.1:56734        ESTABLISHED     24368   TCP    127.0.0.1:1883         127.0.0.1:56735        ESTABLISHED     24368   TCP    127.0.0.1:1883         127.0.0.1:56736        ESTABLISHED     24368   TCP    127.0.0.1:56734        127.0.0.1:1883         ESTABLISHED     464   TCP    127.0.0.1:56735        127.0.0.1:1883         ESTABLISHED     24372   TCP    127.0.0.1:56736        127.0.0.1:1883         ESTABLISHED     27020   TCP    192.168.15.10:1883     192.168.15.2:40378     ESTABLISHED     24368   TCP    [::]:1883              [::]:0                 LISTENING       24368
+
+Firewall:
+ Nome da Regra:                        Mosquitto MQTT ---------------------------------------------------------------------- Habilitado:                           Sim Dire├º├úo:                              Entrada Perfis:                               Dom├¡nio,Particular,P├║blico Agrupamento:                           LocalIP:                              Qualquer RemoteIP:                             Qualquer Protocolo:                            TCP LocalPort:                            1883 RemotePort:                           Qualquer Travessia da borda:                   N├úo A├º├úo:                                 Permitir Ok. 
+
+5.1 PC -> celular: PASS (topico teste/do_pc)
+5.2 celular -> PC: PASS
+Mensagem recebida no PC: OlÃ¡ mosquito,do meu celular!

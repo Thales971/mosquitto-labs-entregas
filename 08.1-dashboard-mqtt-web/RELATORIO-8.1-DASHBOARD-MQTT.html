@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-BR"><head><meta charset="UTF-8"><title>Relatório Lab 8.1</title>
+<style>
+body{font-family:Arial,sans-serif;max-width:860px;margin:24px auto;color:#222;line-height:1.45}
+h1,h2{color:#0b3d5c} .ok{color:#155724;background:#d4edda;padding:8px 12px;border-radius:6px;display:inline-block}
+img{max-width:100%;border:1px solid #ccc;margin:10px 0 18px;border-radius:4px}
+code{background:#f4f4f4;padding:2px 6px;border-radius:3px}
+ul{padding-left:20px} .note{background:#fff3cd;padding:10px 14px;border-radius:6px}
+</style></head><body>
+<h1>Lab 8.1 — Monitoramento Web via MQTT</h1>
+<p><strong>Aluno:</strong> Thales T &nbsp;|&nbsp; <strong>Data:</strong> 28/09/2026 &nbsp;|&nbsp; <strong>Broker:</strong> Mosquitto 2.1.2 local</p>
+<p class="ok">RESULTADO: PASS — WebSockets :9001 + dashboard HTML/JS (Paho) conectado e cards atualizando em tempo real</p>
+
+<h2>1. Objetivo</h2>
+<p>Habilitar WebSockets no Mosquitto (porta 9001), criar dashboard HTML/JS com Paho MQTT e visualizar temperatura, umidade e qualidade do ar em tempo real.</p>
+
+<h2>2. Configuração do Mosquitto</h2>
+<pre>listener 1883
+allow_anonymous true
+listener 9001
+protocol websockets</pre>
+<p>Serviço reiniciado; firewall inbound TCP <strong>9001</strong> criado (<code>Mosquitto MQTT WebSockets 9001</code>). IP do notebook: <code>192.168.15.5</code>.</p>
+
+<h2>3. Tópicos</h2>
+<ul>
+<li><code>aulas/professor/temperatura</code></li>
+<li><code>aulas/professor/umidade</code></li>
+<li><code>aulas/professor/qualidade_ar</code></li>
+</ul>
+
+<h2>4. Dashboard</h2>
+<p>Arquivo <code>dashboard_mqtt/index.html</code> com <code>MQTT_HOST = "192.168.15.5"</code> e <code>MQTT_PORT = 9001</code>.</p>
+
+<h2>5. Evidências (Prompt / navegador reais)</h2>
+<p><strong>IP e portas 1883/9001</strong></p>
+<img src="prints/00-terminal-ipconfig-portas-REAL.png" alt="ipconfig e portas">
+<p><strong>mosquitto_sub #</strong></p>
+<img src="prints/01-terminal-mosquitto-sub-REAL.png" alt="mosquitto_sub">
+<p><strong>Trecho do mosquitto.conf</strong></p>
+<img src="prints/02-terminal-mosquitto-conf-REAL.png" alt="conf">
+<p><strong>Dashboard no navegador (Conectado)</strong></p>
+<img src="prints/03-dashboard-navegador-REAL.png" alt="dashboard">
+
+<div class="note"><strong>Nota:</strong> Sem ESP32/DHT físico disponível. Publicação nos tópicos feita por <code>esp32_simulado_mosquitto_local.py</code>. Broker, WebSockets, Prompt e dashboard são reais.</div>
+</body></html>

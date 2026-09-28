@@ -1,0 +1,19 @@
+﻿O QUE ENTREGAR (pasta completa):
+
+1) esp32_mosquitto_local.ino
+   - Codigo Arduino do guia (bug airQuality corrigido)
+   - MQTT_SERVER = 192.168.15.5
+
+2) prints/00-terminal-ipconfig-REAL.png
+   - Prompt real: sc query mosquitto + ipconfig
+
+3) prints/01-terminal-CMD-REAL.png
+   - Prompt real: porta 1883 + mosquitto_sub nos topicos + cliente simulado PASS
+
+4) RELATORIO-7.1-MOSQUITTO-LOCAL.pdf
+   - Relatorio com contexto (sem ESP fisico em casa) + evidencias
+
+5) esp32_simulado_mosquitto_local.py (opcional / anexo)
+   - Cliente que substituiu o ESP32 neste ambiente
+
+NOTA: Sem ESP32/DHT11 fisico (repouso). Fluxo Mosquitto local + topicos do guia validados no notebook.

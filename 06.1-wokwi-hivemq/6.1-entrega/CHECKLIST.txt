@@ -1,0 +1,7 @@
+Lab 6.1 — Checklist
+[x] MQTTX New Connection (wss broker.hivemq.com:8884 /mqtt)
+[x] Connected (testemqtt)
+[x] Subscription aulas/professortupi/#
+[x] Circuito ESP32 + DHT22 (GPIO 14)
+[x] Código sketch.ino (HiveMQ 1883)
+[x] Mensagens temperatura + umidade no MQTTX

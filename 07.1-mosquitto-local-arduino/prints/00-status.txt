@@ -1,0 +1,6 @@
+﻿Lab 7.1 - evidencias (captura estatica)
+Data: 2026-09-28 09:16:01
+Mosquitto Status: Running
+Mosquitto StartType: Automatic
+IPv4 MQTT_SERVER: 192.168.15.5
+Porta: 1883
