@@ -3,32 +3,127 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Dashboard IoT - ESP32 + Mosquitto</title>
-  <link rel="stylesheet" href="style.css">
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/paho-mqtt/1.0.1/mqttws31.min.js" type="text/javascript"></script>
+  <title>Estação IoT 2TDS2 | Lab 9.1</title>
+  <link rel="stylesheet" href="index.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/paho-mqtt/1.0.1/mqttws31.min.js"></script>
 </head>
 <body>
-
-  <h1>📊 Monitoramento IoT em Tempo Real</h1>
-  <div id="status" class="status disconnected">Status: Desconectado</div>
-
-  <div class="cards-container">
-    <div class="card">
-      <h3>Temperatura</h3>
-      <div class="value"><span id="temp">--</span> <span class="unit">°C</span></div>
+  <header class="cabecalho">
+    <div class="cabecalho-inner">
+      <h1>Estação IoT - Monitoramento Ao Vivo</h1>
+      <p class="grupo-nome"><strong>Nome do Grupo:</strong> Estação IoT 2TDS2</p>
+      <p class="turma">Turma: 2TDS2 · Matéria: ITCOI</p>
     </div>
+    <nav class="nav-principal" aria-label="Navegação principal">
+      <button type="button" class="nav-btn ativo" data-page="sobre" id="btn-sobre">Sobre</button>
+      <button type="button" class="nav-btn" data-page="dashboard" id="btn-dashboard">Dashboard Ao Vivo</button>
+    </nav>
+  </header>
 
-    <div class="card">
-      <h3>Umidade</h3>
-      <div class="value"><span id="hum">--</span> <span class="unit">%</span></div>
-    </div>
+  <main>
+    <!-- Página Sobre -->
+    <section id="pagina-sobre" class="pagina ativa" aria-labelledby="titulo-sobre">
+      <article>
+        <h2 id="titulo-sobre">Sobre o Projeto</h2>
+        <p>
+          Esta estação IoT coleta temperatura, umidade e qualidade do ar com ESP32,
+          DHT11 e MQ-135, e publica os dados via MQTT (Mosquitto) para visualização
+          em tempo real neste painel web.
+        </p>
+      </article>
 
-    <div class="card">
-      <h3>Qualidade do Ar</h3>
-      <div class="value"><span id="air">--</span></div>
-    </div>
-  </div>
+      <article>
+        <h2>Hardware</h2>
+        <p>
+          Microcontrolador ESP32, sensor DHT11 (GPIO14), sensor de gás MQ-135 (GPIO34)
+          e três LEDs de alerta (GPIO25 temperatura, GPIO26 umidade, GPIO27 gás).
+        </p>
+        <figure class="figura">
+          <img src="imagens/circuito.svg" alt="Diagrama do circuito da estação IoT" width="480" height="280">
+          <figcaption>Figura 1 - Circuito da estação</figcaption>
+        </figure>
+      </article>
 
-  <script src="app.js"></script>
+      <article>
+        <h2>Arquitetura</h2>
+        <p>
+          O firmware publica nos tópicos <code>aulas/professor/temperatura</code>,
+          <code>aulas/professor/umidade</code> e <code>aulas/professor/qualidade_ar</code>.
+          O navegador conecta ao broker via WebSocket (porta 9001) com a biblioteca Paho.
+        </p>
+        <figure class="figura">
+          <img src="imagens/arquitetura.svg" alt="Arquitetura MQTT da solução" width="480" height="280">
+          <figcaption>Figura 2 - Arquitetura MQTT</figcaption>
+        </figure>
+      </article>
+
+      <article>
+        <h2>Dashboard</h2>
+        <p>
+          A aba Dashboard Ao Vivo exibe status de conexão, cartões com os valores
+          recebidos e campo para salvar a senha do professor no localStorage.
+        </p>
+        <figure class="figura">
+          <img src="imagens/dashboard.svg" alt="Prévia do dashboard ao vivo" width="480" height="280">
+          <figcaption>Figura 3 - Dashboard ao vivo</figcaption>
+        </figure>
+      </article>
+    </section>
+
+    <!-- Página Dashboard -->
+    <section id="pagina-dashboard" class="pagina" aria-labelledby="titulo-dash" hidden>
+      <h2 id="titulo-dash">Dashboard Ao Vivo</h2>
+
+      <div class="status-box" role="status" aria-live="polite">
+        <span class="status-dot" id="status-dot"></span>
+        <span id="status-texto">Desconectado</span>
+      </div>
+
+      <div class="senha-box">
+        <label for="senha-professor">Senha do professor (localStorage)</label>
+        <div class="senha-row">
+          <input type="password" id="senha-professor" placeholder="Informe a senha" autocomplete="off">
+          <button type="button" id="btn-salvar-senha">Salvar</button>
+        </div>
+        <p class="hint" id="senha-msg">
+          Chave: <code>senhaGrupo</code>. Placeholder: ITCOI-2TDS2-FELIPE
+          (substituir pela senha informada pelo professor, se diferente).
+        </p>
+      </div>
+
+      <div class="cards" aria-label="Leituras ao vivo">
+        <article class="card" id="card-temp">
+          <h3>Temperatura</h3>
+          <p class="valor"><span id="val-temp">--</span><span class="unidade"> °C</span></p>
+          <p class="topico">aulas/professor/temperatura</p>
+        </article>
+        <article class="card" id="card-umid">
+          <h3>Umidade</h3>
+          <p class="valor"><span id="val-umid">--</span><span class="unidade"> %</span></p>
+          <p class="topico">aulas/professor/umidade</p>
+        </article>
+        <article class="card" id="card-gas">
+          <h3>Qualidade do Ar</h3>
+          <p class="valor"><span id="val-gas">--</span><span class="unidade"> ADC</span></p>
+          <p class="topico">aulas/professor/qualidade_ar</p>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="rodape">
+    <p class="integrantes">
+      Integrantes:
+      Thales Torsatto Silva ·
+      Henrico Ferrari Ferreira ·
+      Lucas Tavares Bento ·
+      Kaike Murilo Costa Ribeiro ·
+      Victor Boehm de Assumpção ·
+      Vitor Francisco Nunes
+    </p>
+    <p class="banner">Projeto IOT SESI SENAI Valinhos Grupo 01</p>
+  </footer>
+
+  <script src="index.js"></script>
 </body>
 </html>

@@ -1,0 +1,294 @@
+/* Estação IoT 2TDS2 — Lab 9.1 */
+
+:root {
+  --vermelho-senai: #cc0000;
+  --vermelho-escuro: #990000;
+  --fundo: #f4f5f7;
+  --card: #ffffff;
+  --texto: #1a1a1a;
+  --texto-suave: #555;
+  --borda: #ddd;
+  --ok: #1a7f37;
+  --erro: #cc0000;
+  --sombra: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background: var(--fundo);
+  color: var(--texto);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  line-height: 1.5;
+}
+
+.cabecalho {
+  background: var(--vermelho-senai);
+  color: #fff;
+  padding: 1rem 1.25rem 0;
+}
+
+.cabecalho-inner h1 {
+  font-size: clamp(1.15rem, 3vw, 1.6rem);
+  font-weight: 700;
+}
+
+.grupo-nome,
+.turma {
+  font-size: 0.9rem;
+  opacity: 0.95;
+  margin-top: 0.25rem;
+}
+
+.nav-principal {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+.nav-btn {
+  background: transparent;
+  border: none;
+  color: #fff;
+  padding: 0.65rem 1.1rem;
+  cursor: pointer;
+  font-size: 0.95rem;
+  border-radius: 6px 6px 0 0;
+  opacity: 0.85;
+}
+
+.nav-btn:hover {
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.nav-btn.ativo {
+  background: var(--fundo);
+  color: var(--vermelho-senai);
+  opacity: 1;
+  font-weight: 600;
+}
+
+main {
+  flex: 1;
+  width: 100%;
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 1.5rem 1.25rem 2rem;
+}
+
+.pagina[hidden] {
+  display: none !important;
+}
+
+.pagina.ativa {
+  display: block;
+}
+
+.pagina article {
+  background: var(--card);
+  border-radius: 8px;
+  padding: 1.25rem;
+  margin-bottom: 1rem;
+  box-shadow: var(--sombra);
+}
+
+.pagina h2 {
+  color: var(--vermelho-senai);
+  font-size: 1.25rem;
+  margin-bottom: 0.75rem;
+}
+
+.pagina p {
+  color: var(--texto-suave);
+  margin-bottom: 0.75rem;
+}
+
+.pagina code {
+  background: #eee;
+  padding: 0.1rem 0.35rem;
+  border-radius: 3px;
+  font-size: 0.85em;
+}
+
+.figura {
+  text-align: center;
+  margin: 1rem 0 0.25rem;
+}
+
+.figura img {
+  max-width: 100%;
+  height: auto;
+  border: 1px solid var(--borda);
+  border-radius: 6px;
+  background: #fff;
+}
+
+.figura figcaption {
+  font-size: 0.85rem;
+  color: var(--texto-suave);
+  margin-top: 0.4rem;
+}
+
+.status-box {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: var(--card);
+  padding: 0.85rem 1rem;
+  border-radius: 8px;
+  box-shadow: var(--sombra);
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+
+.status-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--erro);
+  display: inline-block;
+}
+
+.status-dot.conectado {
+  background: var(--ok);
+}
+
+.senha-box {
+  background: var(--card);
+  padding: 1rem 1.25rem;
+  border-radius: 8px;
+  box-shadow: var(--sombra);
+  margin-bottom: 1.25rem;
+}
+
+.senha-box label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 0.4rem;
+  font-size: 0.95rem;
+}
+
+.senha-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.senha-row input {
+  flex: 1;
+  min-width: 160px;
+  padding: 0.55rem 0.75rem;
+  border: 1px solid var(--borda);
+  border-radius: 6px;
+  font-size: 0.95rem;
+}
+
+.senha-row button {
+  background: var(--vermelho-senai);
+  color: #fff;
+  border: none;
+  padding: 0.55rem 1.1rem;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.senha-row button:hover {
+  background: var(--vermelho-escuro);
+}
+
+.hint {
+  font-size: 0.8rem;
+  color: var(--texto-suave);
+  margin-top: 0.5rem;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+}
+
+.card {
+  background: var(--card);
+  border-radius: 8px;
+  padding: 1.25rem;
+  box-shadow: var(--sombra);
+  border-top: 4px solid var(--vermelho-senai);
+  text-align: center;
+}
+
+.card h3 {
+  font-size: 1rem;
+  color: var(--texto-suave);
+  margin-bottom: 0.5rem;
+}
+
+.card .valor {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--texto);
+}
+
+.card .unidade {
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--texto-suave);
+}
+
+.card .topico {
+  font-size: 0.7rem;
+  color: #888;
+  margin-top: 0.75rem;
+  word-break: break-all;
+}
+
+.rodape {
+  background: #222;
+  color: #eee;
+  text-align: center;
+  padding: 1.25rem 1rem;
+  margin-top: auto;
+}
+
+.integrantes {
+  font-size: 0.8rem;
+  line-height: 1.6;
+  max-width: 720px;
+  margin: 0 auto 0.85rem;
+  opacity: 0.9;
+}
+
+.banner {
+  background: var(--vermelho-senai);
+  color: #fff;
+  font-weight: 700;
+  font-size: 0.95rem;
+  padding: 0.65rem 1rem;
+  border-radius: 4px;
+  display: inline-block;
+  letter-spacing: 0.02em;
+}
+
+@media (max-width: 560px) {
+  .cabecalho {
+    padding: 0.85rem 0.85rem 0;
+  }
+
+  .nav-btn {
+    flex: 1;
+    padding: 0.55rem 0.5rem;
+    font-size: 0.85rem;
+  }
+
+  .card .valor {
+    font-size: 1.6rem;
+  }
+}

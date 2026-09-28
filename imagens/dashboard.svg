@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="480" height="280" viewBox="0 0 480 280">
+  <rect width="480" height="280" fill="#f4f5f7" stroke="#ccc"/>
+  <text x="240" y="28" text-anchor="middle" font-family="Segoe UI,Arial" font-size="16" font-weight="700" fill="#cc0000">Dashboard Ao Vivo</text>
+  <rect x="20" y="45" width="440" height="28" rx="4" fill="#fff" stroke="#ddd"/>
+  <circle cx="40" cy="59" r="6" fill="#1a7f37"/>
+  <text x="55" y="63" font-family="Segoe UI,Arial" font-size="12" fill="#1a1a1a">Conectado</text>
+  <rect x="20" y="90" width="140" height="100" rx="6" fill="#fff" stroke="#ddd"/>
+  <rect x="20" y="90" width="140" height="6" fill="#cc0000"/>
+  <text x="90" y="125" text-anchor="middle" font-family="Segoe UI,Arial" font-size="12" fill="#555">Temperatura</text>
+  <text x="90" y="160" text-anchor="middle" font-family="Segoe UI,Arial" font-size="28" font-weight="700" fill="#1a1a1a">24.5°</text>
+  <rect x="170" y="90" width="140" height="100" rx="6" fill="#fff" stroke="#ddd"/>
+  <rect x="170" y="90" width="140" height="6" fill="#cc0000"/>
+  <text x="240" y="125" text-anchor="middle" font-family="Segoe UI,Arial" font-size="12" fill="#555">Umidade</text>
+  <text x="240" y="160" text-anchor="middle" font-family="Segoe UI,Arial" font-size="28" font-weight="700" fill="#1a1a1a">52%</text>
+  <rect x="320" y="90" width="140" height="100" rx="6" fill="#fff" stroke="#ddd"/>
+  <rect x="320" y="90" width="140" height="6" fill="#cc0000"/>
+  <text x="390" y="125" text-anchor="middle" font-family="Segoe UI,Arial" font-size="12" fill="#555">Qualidade Ar</text>
+  <text x="390" y="160" text-anchor="middle" font-family="Segoe UI,Arial" font-size="28" font-weight="700" fill="#1a1a1a">310</text>
+  <rect x="20" y="210" width="440" height="36" rx="4" fill="#cc0000"/>
+  <text x="240" y="233" text-anchor="middle" font-family="Segoe UI,Arial" font-size="13" font-weight="700" fill="#fff">Projeto IOT SESI SENAI Valinhos Grupo 01</text>
+  <text x="240" y="268" text-anchor="middle" font-family="Segoe UI,Arial" font-size="11" fill="#888">Placeholder — substituir por print do dashboard</text>
+</svg>

@@ -1,29 +1,8 @@
-# Dashboard MQTT (HTML + CSS + JS)
+﻿# Estacao IoT 9.1 - Dashboard Web (2TDS2 / ITCOI)
 
-Dashboard web em tempo real para Mosquitto via **WebSockets** (Paho MQTT).
+Arquivos da atividade 9.1: index.html, index.css, index.js e imagens.
 
-## Arquivos
+Broker Mosquitto local: MQTT 1883 + WebSockets 9001.
+Host padrao em index.js: 192.168.15.5
 
-- `index.html` — estrutura da página
-- `style.css` — estilos dos cards
-- `app.js` — conexão MQTT e atualização dos valores
-
-## Configuração
-
-Em `app.js`, ajuste se precisar:
-
-```js
-const MQTT_HOST = "192.168.15.5";
-const MQTT_PORT = 9001;
-```
-
-Mosquitto precisa ter:
-
-```
-listener 9001
-protocol websockets
-```
-
-## Como abrir
-
-Abra `index.html` no navegador (ou sirva a pasta com um server HTTP local).
+Grupo: Thales Torsatto Silva, Henrico Ferrari Ferreira, Lucas Tavares Bento, Kaike Murilo Costa Ribeiro, Victor Boehm de Assumpcao, Vitor Francisco Nunes
