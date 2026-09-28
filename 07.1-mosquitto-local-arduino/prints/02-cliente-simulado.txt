@@ -1,8 +1,0 @@
-Conectado ao Mosquitto local 127.0.0.1:1883 como Grupo01_Cliente_SIM_f3d7
-Publicando em aulas/professor/temperatura, aulas/professor/umidade, aulas/professor/qualidade_ar a cada 3.0s
-(Ctrl+C para parar)
-
-Temp: 25.0 C | Umid: 48.7 % | Ar: 1775 | LED=OFF
-Temp: 20.9 C | Umid: 52.8 % | Ar: 2146 | LED=ON
-Temp: 25.1 C | Umid: 58.0 % | Ar: 1877 | LED=ON
-Temp: 29.0 C | Umid: 58.8 % | Ar: 2020 | LED=ON

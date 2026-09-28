@@ -1,2 +1,0 @@
-C:\Users\User\Downloads\Mosquitto-Lab-7.1\esp32_simulado_mosquitto_local.py:22: DeprecationWarning: Callback API version 1 is deprecated, update to latest version
-  client = mqtt.Client(client_id=client_id, protocol=mqtt.MQTTv311)

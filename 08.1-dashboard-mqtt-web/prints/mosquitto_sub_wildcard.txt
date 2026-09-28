@@ -1,6 +1,0 @@
-aulas/professor/temperatura 27.6
-aulas/professor/umidade 59.6
-aulas/professor/qualidade_ar 1550
-aulas/professor/temperatura 24.2
-aulas/professor/umidade 61.2
-aulas/professor/qualidade_ar 1342
